@@ -22,6 +22,10 @@ public class Nodo {
     private Nodo derecho;
     private String codigoIntermedio;
     private String lugar; //Para los temporales
+    private String lineaColor;
+    private String nodoColor;
+    private String resultado;
+    
     
     public Nodo(String dato){//Informacion
         this.dato=dato;
@@ -35,5 +39,85 @@ public class Nodo {
         this.codigoIntermedio = "";
         this.lugar = "";
     }
+    
+    
+
+    public String getDato() {
+        return dato;
+    }
+
+    public Nodo getPadre() {
+        return padre;
+    }
+
+    public Nodo getIzquierdo() {
+        return izquierdo;
+    }
+
+    public Nodo getDerecho() {
+        return derecho;
+    }
+
+    public String getCodigoIntermedio() {
+        return codigoIntermedio;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setDato(String dato) {
+        this.dato = dato;
+    }
+
+    public void setPadre(Nodo padre) {
+        this.padre = padre;
+    }
+
+    public void setIzquierdo(Nodo izquierdo) {
+        this.izquierdo = izquierdo;
+    }
+
+    public void setDerecho(Nodo derecho) {
+        this.derecho = derecho;
+    }
+
+    public void setCodigoIntermedio(String codigoIntermedio) {
+        this.codigoIntermedio = codigoIntermedio;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public String getLineaColor() {
+        return lineaColor;
+    }
+
+    public void setLineaColor(String lineaColor) {
+        this.lineaColor = lineaColor;
+    }
+
+    public String getNodoColor() {
+        return nodoColor;
+    }
+
+    public void setNodoColor(String nodoColor) {
+        this.nodoColor = nodoColor;
+    }
+
+    public String getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(String resultado) {
+        this.resultado = resultado;
+    }
+
+
+    
+    
+    
+    
     
 }
