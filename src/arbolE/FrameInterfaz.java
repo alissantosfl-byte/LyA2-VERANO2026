@@ -15,6 +15,7 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
@@ -237,6 +238,7 @@ public class FrameInterfaz extends javax.swing.JFrame {
         jTxtPostOrden = new javax.swing.JTextArea();
         btnAgenteIA = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -334,6 +336,9 @@ public class FrameInterfaz extends javax.swing.JFrame {
         jButton5.setText("Optimiza Inter...");
         jButton5.addActionListener(this::jButton5ActionPerformed);
 
+        jButton11.setText("Abrir Emu");
+        jButton11.addActionListener(this::jButton11ActionPerformed);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -361,11 +366,13 @@ public class FrameInterfaz extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnAgenteIA)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5))
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton11))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,7 +383,8 @@ public class FrameInterfaz extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1)
                     .addComponent(btnAgenteIA)
-                    .addComponent(jButton5))
+                    .addComponent(jButton5)
+                    .addComponent(jButton11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -600,8 +608,8 @@ ventana.setVisible (true) ;
                 "MOV AX,@DATA \n"+
                 "MOV DS,AX \n"; //15 julio
         String finalEmu=arbol.emu86+this.emuLocal;
-        finalEmu+="\n MOV AX,4c00h \n"+
-                "int 21h \n end";
+        finalEmu+="\n MOV AX,4C00H \n"+
+                "INT 21H \n end";
         showMessageDialog(null,finalEmu);
         
         Contador++;
@@ -694,6 +702,19 @@ ventana.setVisible(true);
 ventana.setVisible(true);
     }//GEN-LAST:event_jButton10ActionPerformed
 
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+
+        try {
+
+    File archivo = new File("C:\\Users\\Perso\\OneDrive\\Documentos\\NetBeansProjects\\ArbolExpresiones\\e1.asm"); 
+
+        Desktop.getDesktop().open(archivo);
+ 
+} catch (IOException ex) {
+    JOptionPane.showMessageDialog(this, "Error al abrir el archivo: " + ex.getMessage());
+}
+    }//GEN-LAST:event_jButton11ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -723,6 +744,7 @@ ventana.setVisible(true);
     private javax.swing.JButton btnAgenteIA;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

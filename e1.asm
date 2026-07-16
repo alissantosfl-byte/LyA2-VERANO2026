@@ -4,15 +4,9 @@
 .DATA
 a dw 1
 b dw 2
-a dw 1
-b dw 2
 .CODE 
 MOV AX,@DATA 
 MOV DS,AX 
-MOV AX, b
-MOV BX, a
-ADD AX,BX
-
 MOV AX, b
 MOV BX, a
 ADD AX,BX
